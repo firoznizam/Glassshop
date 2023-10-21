@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMMIMI OPTICALS</title>
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Custom JS file link -->
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+
+<!-- Header section starts -->
+
+<header class="header">
+    <a href="{% url 'home' %}" class="logo">TAMMIMI OPTICALS</a>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">home</a></li>
+            <li><a href="{% url 'productsview' %}">products</a></li>
+            <li><a href="#">pages +</a>
+                <ul>
+                    <li><a href="{% url 'aboutview' %}">about</a></li>
+                    <li><a href="{% url 'blogsview' %}">blogs</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'contactview' %}">contact</a></li>
+            <li><a href="#">account +</a>
+                <ul>
+                    <li><a href="{% url 'loginview' %}">login</a></li>
+                    <li><a href="{% url 'registerview' %}">register</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+        <a href="{% url 'registerview' %}" class="fas fa-shopping-cart"></a>
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+</header>
+
+<!-- Header section ends -->
+
+{% block content %}
+{% endblock %}
+</body>
+</html>
